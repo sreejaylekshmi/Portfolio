@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Data-Backed GTM Strategy & AI Automation</title>
+<meta name="description" content="Data scientist turned GTM strategist. I find signal in early-stage marketing data and build the models, positioning, and automation to act on it — for B2B SaaS founders and technical teams.">
+<meta name="keywords" content="product marketing, GTM strategy, data-driven marketing, AI automation, lead scoring, ICP, B2B SaaS consulting, data scientist">
+<meta name="author" content="Your Name">
+<link rel="canonical" href="https://yourdomain.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Name — Data-Backed GTM Strategy & AI Automation">
+<meta property="og:description" content="I find signal in early-stage marketing data and build the models, positioning, and automation to act on it.">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+<meta property="og:site_name" content="Your Name">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your Name — Data-Backed GTM Strategy & AI Automation">
+<meta name="twitter:description" content="I find signal in early-stage marketing data and build the models, positioning, and automation to act on it.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.jpg">
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#14181B">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Your Name",
+  "jobTitle": "GTM Strategist & Data Scientist",
+  "description": "Data scientist specializing in data-backed GTM strategy, positioning, and AI automation for B2B SaaS companies.",
+  "url": "https://yourdomain.com/",
+  "sameAs": [
+    "https://linkedin.com/in/yourprofile",
+    "https://yoursubstack.substack.com"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F1E8;
+    --paper-2: #EFE9DA;
+    --ink: #14181B;
+    --ink-2: #1D2226;
+    --muted: #6B6558;
+    --muted-dark: #9A9488;
+    --signal: #D9A441;
+    --signal-2: #B5822E;
+    --hairline: #D8D2C2;
+    --hairline-dark: #2C3236;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  .serif { font-family: 'Fraunces', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px;
+    background: rgba(246,243,236,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-bottom: 1px solid var(--hairline); }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--signal); }
+
+  /* HERO */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+    background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(217,164,65,0.16), transparent 70%), var(--paper);
+  }
+  #signal-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 7vw, 84px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    max-width: 900px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    background: linear-gradient(100deg, var(--signal-2), var(--signal) 60%, #E8C077);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p {
+    margin-top: 24px;
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  /* SECTIONS */
+  section { padding: 140px 48px; max-width: 1100px; margin: 0 auto; }
+  section#ai-band { max-width: none; background: var(--ink); color: var(--paper); padding: 0; }
+  section#ai-band .inner { max-width: 1100px; margin: 0 auto; padding: 140px 48px; }
+  section#ai-band .section-head p.lede { color: var(--muted-dark); }
+  section#ai-band .ai-card { background: var(--ink-2); border: 1px solid var(--hairline-dark); }
+  section#ai-band .ai-card h3 { color: var(--paper); }
+  section#ai-band .ai-card p { color: var(--muted-dark); }
+  section#ai-band .tag { border-color: var(--hairline-dark); color: var(--muted-dark); }
+  .section-head { margin-bottom: 64px; }
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--signal);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .section-tag.ochre { color: var(--signal); }
+  .section-head h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+    max-width: 640px;
+  }
+  .section-head p.lede {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 560px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* CASE CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .case-card { background: var(--paper); padding: 40px; position: relative; }
+  .case-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .case-card h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+  .case-card p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+  .case-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--hairline); }
+  .case-meta div { font-family: 'JetBrains Mono', monospace; }
+  .case-meta .val { font-size: 20px; color: var(--signal); display: block; }
+  .case-meta .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .placeholder-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--signal);
+    margin-top: 16px;
+  }
+
+  /* AI SECTION */
+  .ai-card { background: var(--paper); border: 1px solid var(--hairline); padding: 40px; margin-bottom: 1px; }
+  .ai-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
+  .ai-card p { color: var(--muted); font-size: 15px; }
+  .tag-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; border: 1px solid var(--hairline); border-radius: 20px; color: var(--muted); }
+
+  /* DEMO WIDGET */
+  .demo-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 44px;
+    margin-top: 32px;
+  }
+  .demo-box .mono-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--signal); margin-bottom: 24px; display: block; }
+  .demo-box label { font-size: 13px; color: #C9C4B4; display: block; margin-bottom: 8px; }
+  .demo-box input[type=range] { width: 100%; accent-color: var(--signal); margin-bottom: 24px; }
+  .demo-output { font-family: 'JetBrains Mono', monospace; font-size: 15px; padding: 20px; background: rgba(255,255,255,0.05); border-left: 2px solid var(--signal); }
+
+  /* WRITING */
+  .write-list { border-top: 1px solid var(--hairline); }
+  .write-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 28px 0; border-bottom: 1px solid var(--hairline);
+    text-decoration: none; color: var(--ink);
+  }
+  .write-item:hover h4 { color: var(--signal); }
+  .write-item h4 { font-size: 19px; font-weight: 500; transition: color 0.2s; font-family: 'Fraunces', serif;}
+  .write-item .date { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted); white-space: nowrap; margin-left: 24px; }
+
+  footer {
+    padding: 80px 48px 48px;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+  }
+  footer h3 { font-size: 28px; margin-bottom: 16px; }
+  footer p { color: var(--muted); margin-bottom: 32px; }
+  .footer-links { display: flex; gap: 28px; justify-content: center; }
+  .footer-links a {
+    color: var(--ink); text-decoration: none;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    border-bottom: 1px solid var(--hairline); padding-bottom: 3px;
+  }
+  .footer-links a:hover { color: var(--signal); border-color: var(--signal); }
+
+  @media (max-width: 760px) {
+    nav { padding: 20px 24px; }
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 11px; }
+    section { padding: 90px 24px; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-in { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav" aria-label="Primary">
+  <div class="logo">Your Name</div>
+  <div class="nav-links">
+    <a href="#work">GTM Work</a>
+    <a href="#ai">AI Systems</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="signal-canvas"></canvas>
+  <div class="hero-content">
+    <span class="eyebrow">data scientist → gtm strategist</span>
+    <h1 class="serif">Turning noisy data into <em>decisions</em> people trust.</h1>
+    <p>I find the signal in early-stage GTM data, then build the model or the message — whichever the problem actually needs.</p>
+  </div>
+  <div class="scroll-cue">scroll — 01</div>
+</section>
+
+<section id="work">
+  <div class="section-head fade-in">
+    <span class="section-tag">Field Reports / 01</span>
+    <h2 class="serif">GTM & positioning, backed by data</h2>
+    <p class="lede">Selected engagements where the work started with a dataset, not a guess.</p>
+  </div>
+  <div class="card-grid fade-in">
+    <article class="case-card">
+      <span class="case-num">CASE / 001</span>
+      <h3 class="serif">ICP discovery for a seed-stage SaaS</h3>
+      <p>Segmented signup data to find the 20% of users converting at 5x the average rate — and why.</p>
+      <div class="case-meta">
+        <div><span class="val">3</span><span class="lbl">segments found</span></div>
+        <div><span class="val">5x</span><span class="lbl">conversion lift</span></div>
+      </div>
+      <p class="placeholder-note">// replace with your real case study</p>
+    </article>
+    <article class="case-card">
+      <span class="case-num">CASE / 002</span>
+      <h3 class="serif">Positioning rebuild from usage data</h3>
+      <p>Mined support tickets and call notes for the language customers actually use — rewrote the homepage around it.</p>
+      <div class="case-meta">
+        <div><span class="val">↑</span><span class="lbl">demo requests</span></div>
+        <div><span class="val">2wk</span><span class="lbl">turnaround</span></div>
+      </div>
+      <p class="placeholder-note">// replace with your real case study</p>
+    </article>
+  </div>
+</section>
+
+<section id="ai-band">
+<div class="inner">
+  <div class="section-head fade-in">
+    <span class="section-tag ochre">System Logs / 02</span>
+    <h2 class="serif">AI & automation, built to be used</h2>
+    <p class="lede">Small systems that keep working after the engagement ends — not one-off reports.</p>
+  </div>
+  <div class="fade-in">
+    <div class="ai-card">
+      <h3 class="serif">Lead-scoring pipeline</h3>
+      <p>A live model that scores inbound leads as they arrive, trained on the client's real conversion history.</p>
+      <div class="tag-row"><span class="tag">python</span><span class="tag">logistic regression</span><span class="tag">n8n</span></div>
+    </div>
+    <div class="demo-box">
+      <span class="mono-label">Live mini-demo — lead score simulator</span>
+      <label for="engagement">Product engagement score: <span id="eVal">50</span></label>
+      <input type="range" id="engagement" min="0" max="100" value="50">
+      <div class="demo-output" id="demoOut">→ Lead score: 62/100 — medium priority. Route to nurture sequence.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="writing">
+  <div class="section-head fade-in">
+    <span class="section-tag">Dispatches / 03</span>
+    <h2 class="serif">Writing on data-backed GTM</h2>
+    <p class="lede">Notes from client work, as it happens.</p>
+  </div>
+  <div class="write-list fade-in">
+    <a class="write-item" href="#">
+      <h4>What small-data lead scoring actually looks like</h4>
+      <span class="date mono">draft</span>
+    </a>
+    <a class="write-item" href="#">
+      <h4>Finding your ICP when you only have 200 signups</h4>
+      <span class="date mono">draft</span>
+    </a>
+    <a class="write-item" href="#">
+      <h4>Why most positioning docs are just founder opinion</h4>
+      <span class="date mono">draft</span>
+    </a>
+  </div>
+</section>
+
+<footer id="contact">
+  <h3 class="serif">Let's talk about your data.</h3>
+  <p>Open to consulting engagements and full-time GTM/product roles.</p>
+  <div class="footer-links">
+    <a href="mailto:you@email.com">Email</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Substack</a>
+  </div>
+</footer>
+
+<script>
+  // nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // demo slider
+  const slider = document.getElementById('engagement');
+  const eVal = document.getElementById('eVal');
+  const demoOut = document.getElementById('demoOut');
+  slider.addEventListener('input', () => {
+    const v = slider.value;
+    eVal.textContent = v;
+    const score = Math.min(99, Math.round(20 + v * 0.75));
+    let priority = 'low priority. Add to nurture list.';
+    if (score > 75) priority = 'high priority. Route to sales immediately.';
+    else if (score > 45) priority = 'medium priority. Route to nurture sequence.';
+    demoOut.textContent = `→ Lead score: ${score}/100 — ${priority}`;
+  });
+
+  // signal-in-noise canvas animation
+  const canvas = document.getElementById('signal-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, dots = [];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const DOT_COUNT = 140;
+  for (let i = 0; i < DOT_COUNT; i++) {
+    dots.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      noiseX: Math.random() * w,
+      noiseY: Math.random() * h,
+      signalX: (i / DOT_COUNT) * w,
+      signalY: h / 2 + Math.sin(i * 0.35) * 60,
+      r: Math.random() * 1.8 + 0.6
+    });
+  }
+
+  let progress = 0; // 0 = noise, 1 = signal
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    progress += (targetProgress - progress) * 0.04;
+    dots.forEach(d => {
+      const x = d.noiseX + (d.signalX - d.noiseX) * progress;
+      const y = d.noiseY + (d.signalY - d.noiseY) * progress;
+      ctx.beginPath();
+      ctx.arc(x, y, d.r, 0, Math.PI * 2);
+      const alpha = 0.15 + progress * 0.35;
+      ctx.fillStyle = progress > 0.5 ? `rgba(47,111,98,${alpha})` : `rgba(107,101,88,${alpha})`;
+      ctx.fill();
+    });
+    if (!reduceMotion) requestAnimationFrame(animate);
+  }
+
+  let targetProgress = 0.15;
+  window.addEventListener('scroll', () => {
+    const scrollFrac = Math.min(window.scrollY / (h * 0.8), 1);
+    targetProgress = 0.15 + scrollFrac * 0.85;
+  });
+  canvas.addEventListener('mousemove', (e) => {
+    targetProgress = Math.min(1, e.clientY / h + 0.3);
+  });
+
+  animate();
+  if (reduceMotion) { progress = 0.6; animate(); }
+</script>
+
+</body>
+</html>
